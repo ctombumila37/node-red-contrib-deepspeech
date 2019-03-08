@@ -1,22 +1,22 @@
 {
     "name"         : "node-red-contrib-deepspeech",
-    "version"      : "0.0.1",
+    "version"      : "0.0.2",
     "description"  : "A Node Red node for speech-to-text using Mozilla DeepSpeech",
     "dependencies": {
-       "deepspeech": "0.3.0"
+       "deepspeech": "0.4.1"
     },
     "author": {
         "name": "Bart Butenaers"
     },
     "license": "Apache-2.0",
-    "keywords": [ "node-red", "stt", "speech", "text", "voice", "deepspeach" ],
+    "keywords": [ "node-red", "stt", "speech", "text", "voice", "deepspeech" ],
     "bugs": {
-        "url": "https://github.com/bartbutenaers/node-red-contrib-deepspeech/issues"
+        "url": "https://github.com/SirLemyDanger/node-red-contrib-deepspeech/issues"
     },
-    "homepage": "https://github.com/bartbutenaers/node-red-contrib-deepspeech",
+    "homepage": "https://github.com/SirLemyDanger/node-red-contrib-deepspeech",
     "repository": {
         "type": "git",
-        "url": "https://github.com/bartbutenaers/node-red-contrib-deepspeech.git"
+        "url": "https://github.com/SirLemyDanger/node-red-contrib-deepspeech.git"
     },
     "node-red"     : {
         "nodes": {

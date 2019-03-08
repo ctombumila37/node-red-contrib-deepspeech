@@ -27,7 +27,7 @@
 
     function DeepSpeechNode(config) {
         RED.nodes.createNode(this, config);
-        this.modelPath = config.modelPath || '/home/pi/node_modules/deepspeech/models';
+        this.modelPath = config.modelPath || '/data/node_modules/deepspeech/models';
  
         var node = this;
         
