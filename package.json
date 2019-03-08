@@ -20,7 +20,7 @@
     },
     "node-red"     : {
         "nodes": {
-            "deep-speech": "deep_speach.js"
+            "deep-speech": "deep_speech.js"
         }
     }
 }
