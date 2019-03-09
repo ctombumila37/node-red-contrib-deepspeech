@@ -27,7 +27,7 @@
 
     function DeepSpeechNode(config) {
         RED.nodes.createNode(this, config);
-        this.modelPath = config.modelPath || '/data/node_modules/deepspeech/models';
+        this.modelPath = config.modelPath;
  
         var node = this;
         
@@ -37,11 +37,10 @@
         const BEAM_WIDTH = 500;
 
         // The alpha hyperparameter of the CTC decoder. Language Model weight
-        const LM_WEIGHT = 1.50;
+        const LM_ALPHA = 0.75;
 
-        // Valid word insertion weight. This is used to lessen the word insertion penalty
-        // when the inserted word is part of the vocabulary
-        const VALID_WORD_COUNT_WEIGHT = 2.10;
+        // The beta hyperparameter of the CTC decoder. Word insertion bonus.
+        const LM_BETA = 1.85;
 
         // These constants are tied to the shape of the graph used (changing them changes
         // the geometry of the first layer), so make sure you use the same constants that
@@ -68,13 +67,13 @@
             console.info('Loaded model in %ds.', totalTime(model_load_end));
 
         /*  if (args['lm'] && args['trie']) {
-            console.error('Loading language model from files %s %s', args['lm'], args['trie']);
-            const lm_load_start = process.hrtime();
-            model.enableDecoderWithLM(args['alphabet'], args['lm'], args['trie'],
-                                      LM_WEIGHT, VALID_WORD_COUNT_WEIGHT);
-            const lm_load_end = process.hrtime(lm_load_start);
-            console.error('Loaded language model in %ds.', totalTime(lm_load_end));
-          }*/
+                console.error('Loading language model from files %s %s', args['lm'], args['trie']);
+                const lm_load_start = process.hrtime();
+                model.enableDecoderWithLM(args['alphabet'], args['lm'], args['trie'],
+                                          LM_ALPHA, LM_BETA);
+                const lm_load_end = process.hrtime(lm_load_start);
+                console.error('Loaded language model in %ds.', totalTime(lm_load_end));
+            }*/
         }
         
         node.on("input", function(msg) {
